@@ -65,7 +65,6 @@ jobs:
           --platform "managed" \
           --allow-unauthenticated \
           --tag production \
-          --revision-suffix=${{vars.GCR_STAGING_PROJECT_NAME}}-prod-${{github.sha}}
       - name: Deploy to GCP Run - Staging environment
         if: github.ref != 'refs/heads/main'
         run: |
@@ -77,4 +76,3 @@ jobs:
           --platform "managed" \
           --allow-unauthenticated \
           --tag staging \
-          --revision-suffix=${{vars.GCR_STAGING_PROJECT_NAME}}-staging-${{github.sha}}
